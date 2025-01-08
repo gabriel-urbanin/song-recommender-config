@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: song-recommender-app
-        image: your-docker-image:latest
+        image: gabrielurbanin/song-recommender-app:v1.0
         volumeMounts:
         - name: song-recommender-app-volume
           mountPath: /app/model
