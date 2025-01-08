@@ -19,7 +19,7 @@ spec:
         image: gabrielurbanin/song-recommender-app:v1.1
         volumeMounts:
         - name: song-recommender-app-volume
-          mountPath: /app/model
+          mountPath: /model
       volumes:
       - name: song-recommender-app-volume
         persistentVolumeClaim:
