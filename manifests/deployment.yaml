@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: song-recommender-app-deployment
+  labels:
+    app: song-recommender-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: song-recommender-app
+  template:
+    metadata:
+      labels:
+        app: song-recommender-app
+    spec:
+      containers:
+      - name: song-recommender-app
+        image: your-docker-image:latest
+        volumeMounts:
+        - name: song-recommender-app-volume
+          mountPath: /app/model
+      volumes:
+      - name: song-recommender-app-volume
+        persistentVolumeClaim:
+          claimName: project2-pvc
