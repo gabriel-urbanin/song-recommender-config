@@ -9,6 +9,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: default-storage-class-gabrieltavares
   selector:
     matchLabels:
       namespace: gabrieltavares
