@@ -1,23 +1,23 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: song-recommender-app-job
+  name: song-recommender-job
   labels:
-    app: song-recommender-app
+    app: song-recommender-job
 spec:
   template:
     metadata:
       labels:
-        app: song-recommender-app
+        app: song-recommender-job
     spec:
       containers:
-      - name: song-recommender-app
+      - name: song-recommender-job
         image: gabrielurbanin/song-recommender-app:v1.2
         volumeMounts:
-        - name: song-recommender-app-volume
+        - name: song-recommender-job-volume
           mountPath: /app/model
       volumes:
-      - name: song-recommender-app-volume
+      - name: song-recommender-job-volume
         persistentVolumeClaim:
           claimName: project2-pvc
   backoffLimit: 4
