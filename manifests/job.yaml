@@ -1,14 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: song-recommender-app-deployment
+  name: song-recommender-app-job
   labels:
     app: song-recommender-app
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: song-recommender-app
   template:
     metadata:
       labels:
@@ -24,3 +20,4 @@ spec:
       - name: song-recommender-app-volume
         persistentVolumeClaim:
           claimName: project2-pvc
+  backoffLimit: 4
