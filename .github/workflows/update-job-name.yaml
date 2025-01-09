@@ -1,0 +1,31 @@
+name: Update Job Name With Timestamp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Update job.yaml with timestamp
+      run: |
+        TIMESTAMP=$(date +%s)
+        sed -i "s/^  name: song-recommender-job$/  name: song-recommender-job-${TIMESTAMP}/" manifests/job.yaml
+        sed -i "s/^.*app: song-recommender-job$/    app: song-recommender-job-${TIMESTAMP}/" manifests/job.yaml
+    
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+    
+    - name: Commit and push changes
+      run: |
+        git add manifests/job.yaml
+        git commit -m "Update job name with timestamp: ${TIMESTAMP}" || echo "No changes to commit"
+        git push origin main
