@@ -10,6 +10,7 @@ spec:
       labels:
         app: song-recommender-job
     spec:
+      restartPolicy: Never
       containers:
       - name: song-recommender-job
         image: gabrielurbanin/song-recommender-app:v1.2
