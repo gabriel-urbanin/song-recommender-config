@@ -18,7 +18,7 @@ jobs:
     - name: Update job.yaml with timestamp
       run: |
         TIMESTAMP=$(date +%s)
-        sed -i "s/\(metadata:\s*name:\s*song-recommender-job\(-[a-zA-Z0-9]*\)\?\)/\1 song-recommender-job-${TIMESTAMP}/" manifests/job.yaml
+        sed -i "s/^  name: song-recommender-job\(-[a-zA-Z0-9]*\)\?\)/  name: song-recommender-job-${TIMESTAMP}/" manifests/job.yaml
     
     - name: Configure Git
       run: |
