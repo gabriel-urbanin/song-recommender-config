@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: song-recommender-job
+  name: song-recommender-job-1736468590
   labels:
-    app: song-recommender-job
+    app: song-recommender-job-1736468590
 spec:
   template:
     metadata:
       labels:
-        app: song-recommender-job
+    app: song-recommender-job-1736468590
     spec:
       restartPolicy: Never
       containers:
