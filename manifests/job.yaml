@@ -3,12 +3,12 @@ kind: Job
 metadata:
   name: song-recommender-job-1736468590
   labels:
-    app: song-recommender-job-1736468590
+    app: song-recommender-job
 spec:
   template:
     metadata:
       labels:
-    app: song-recommender-job-1736468590
+    app: song-recommender-job
     spec:
       restartPolicy: Never
       containers:
