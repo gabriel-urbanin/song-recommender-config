@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: song-recommender-job-1736468590
+  name: song-recommender-job-1736471064
   labels:
     app: song-recommender-job
 spec:
