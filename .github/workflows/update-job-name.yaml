@@ -25,7 +25,6 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
     
     - name: Commit and push changes
-      uses: actions/labeler@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
       run: |
