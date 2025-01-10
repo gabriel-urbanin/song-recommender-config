@@ -8,7 +8,7 @@ spec:
   template:
     metadata:
       labels:
-    app: song-recommender-job
+        app: song-recommender-job
     spec:
       restartPolicy: Never
       containers:
