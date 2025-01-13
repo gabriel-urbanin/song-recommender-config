@@ -13,7 +13,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: song-recommender-job-container
-        image: gabrielurbanin/song-recommender-app:v1.2
+        image: gabrielurbanin/song-recommender-job:v1.0
         volumeMounts:
         - name: song-recommender-job-volume
           mountPath: /app/model
